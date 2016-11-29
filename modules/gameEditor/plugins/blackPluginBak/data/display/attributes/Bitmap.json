@@ -1,0 +1,12 @@
+{
+  "name": "uieditor.Bitmap",
+  "extends": "uieditor.DisplayObject",
+  "members": {
+    "texture": {
+      "type": "uieditor.AttributeString"
+    },
+    "scale9Grid": {
+      "type": "uieditor.AttributeString"
+    }
+  }
+}

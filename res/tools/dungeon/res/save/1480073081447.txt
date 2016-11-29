@@ -1,0 +1,2 @@
+id,name,trigger_type,delay,condition,effect_type,effect_params,times,open,status
+14,name,1,0,"","[20]","[[2]]",1,1,0

@@ -1,0 +1,24 @@
+{
+  "name": "uieditor.ToggleButton",
+  "extends": "uieditor.Button",
+  "members": {
+    "selected": {
+      "type": "uieditor.AttributeString",
+      "init": {
+        "list": [
+          {
+            "label": "true",
+            "type": "true"
+          },
+          {
+            "label": "false",
+            "type": "false"
+          }
+        ]
+      }
+    },
+    "change": {
+      "type": "uieditor.AttributeString"
+    }
+  }
+}

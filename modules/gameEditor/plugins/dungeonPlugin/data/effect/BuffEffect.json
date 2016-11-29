@@ -1,0 +1,16 @@
+{
+  "name": "dg.BuffEffect",
+  "desc": "添加Buff",
+  "members": {
+    "id": {
+      "desc": "Buff Id",
+      "type": "int"
+    },
+    "x": {
+      "type": "int"
+    },
+    "y": {
+      "type": "int"
+    }
+  }
+}

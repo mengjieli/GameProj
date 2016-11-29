@@ -1,0 +1,12 @@
+{
+  "name": "uieditor.RadioButton",
+  "extends": "uieditor.ToggleButton",
+  "members": {
+    "groupName": {
+      "type": "uieditor.AttributeString"
+    },
+    "change": {
+      "type": "uieditor.AttributeString"
+    }
+  }
+}

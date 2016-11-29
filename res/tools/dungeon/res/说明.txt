@@ -1,0 +1,35 @@
+image.csv
+
+name:名称(配置表里的名称)
+url:图片的路径 (相对于image目录)
+scaleMode: 0.无缩放 1.全屏
+
+
+
+
+effect.csv
+
+name:名称(配置表李的名称)
+length:有多少张图片
+frameRate:帧率 (每秒播放多少张图片)
+loop:循环播放次数 (播放完后会自动删掉) 如果需要无限循环，把数字填大一点，比如 1000000(一百万)
+
+动画图片命名规则:
+名称_000
+
+比如配置表里有一条
+trap1,12,12,0
+
+那么图片就是 (记住，不要大写的PNG)
+trap1_000.png
+trap1_001.png
+trap1_002.png
+trap1_003.png
+trap1_004.png
+trap1_005.png
+trap1_006.png
+trap1_007.png
+trap1_008.png
+trap1_009.png
+trap1_010.png
+trap1_011.png

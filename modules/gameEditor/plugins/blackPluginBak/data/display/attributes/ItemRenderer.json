@@ -1,0 +1,11 @@
+{
+  "name": "uieditor.ItemRenderer",
+  "extends": "uieditor.Group",
+  "init": {
+    "absoluteState": {
+      "content": "true"
+    }
+  },
+  "members": {
+  }
+}

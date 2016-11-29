@@ -1,0 +1,17 @@
+{
+  "name": "uieditor.ListBase",
+  "extends": "uieditor.DataGroup",
+  "init": {
+    "requireSelection": {
+      "content": "true"
+    },
+    "itemSelectedEnabled": {
+      "content": "true"
+    },
+    "itemClickedEnabled": {
+      "content": "true"
+    }
+  },
+  "members": {
+  }
+}

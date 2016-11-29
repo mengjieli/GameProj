@@ -1,0 +1,21 @@
+{
+  "name": "uieditor.ScrollBar",
+  "extends": "uieditor.Group",
+  "members": {
+    "autoVisibility": {
+      "type": "uieditor.AttributeString",
+      "init": {
+        "list": [
+          {
+            "label": "true",
+            "type": "true"
+          },
+          {
+            "label": "false",
+            "type": "false"
+          }
+        ]
+      }
+    }
+  }
+}

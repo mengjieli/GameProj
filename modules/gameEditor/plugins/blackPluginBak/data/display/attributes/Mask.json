@@ -1,0 +1,6 @@
+{
+  "name": "uieditor.Mask",
+  "extends": "uieditor.DisplayObject",
+  "members": {
+  }
+}

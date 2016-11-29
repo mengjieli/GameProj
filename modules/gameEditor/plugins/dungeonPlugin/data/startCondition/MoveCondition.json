@@ -1,0 +1,29 @@
+{
+  "name": "dg.MoveCondition",
+  "desc": "移动触发",
+  "members": {
+    "armyType": {
+      "desc": "部队类型",
+      "type": "int",
+      "enumList": [
+        {
+          "label": "全部",
+          "type": 0
+        },
+        {
+          "label": "部队",
+          "type": 1
+        },
+        {
+          "label": "怪物",
+          "type": 2
+        }
+      ]
+    },
+    "points": {
+      "desc": "坐标点(网格坐标)",
+      "type": "Array",
+      "typeValue": "Point"
+    }
+  }
+}

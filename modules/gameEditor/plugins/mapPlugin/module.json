@@ -1,0 +1,14 @@
+{
+  "name": "map",
+  "scripts": [
+    "./src/Map.script"
+  ],
+  "components": [
+    "./view/NewMapPanel.xml"
+  ],
+  "classes": {
+  },
+  "data": [
+    "./data/Map.json"
+  ]
+}

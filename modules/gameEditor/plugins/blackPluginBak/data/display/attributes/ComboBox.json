@@ -1,0 +1,15 @@
+{
+  "name": "uieditor.ComboBox",
+  "extends": "uieditor.Group",
+  "members": {
+    "labelField": {
+      "type": "uieditor.AttributeString"
+    },
+    "valueField": {
+      "type": "uieditor.AttributeString"
+    },
+    "dataProvider": {
+      "type": "uieditor.AttributeString"
+    }
+  }
+}

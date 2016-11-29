@@ -1,0 +1,6 @@
+{
+  "name": "uieditor.TileImage",
+  "extends": "uieditor.Group",
+  "members": {
+  }
+}

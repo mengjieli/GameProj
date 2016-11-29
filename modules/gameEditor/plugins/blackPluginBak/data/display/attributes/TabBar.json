@@ -1,0 +1,22 @@
+{
+  "name": "uieditor.List",
+  "extends": "uieditor.ListBase",
+  "members": {
+    "more": {
+      "type": "uieditor.AttributeString",
+      "init": {
+        "content": "false",
+        "list": [
+          {
+            "label": "true",
+            "type": "true"
+          },
+          {
+            "label": "false",
+            "type": "false"
+          }
+        ]
+      }
+    }
+  }
+}

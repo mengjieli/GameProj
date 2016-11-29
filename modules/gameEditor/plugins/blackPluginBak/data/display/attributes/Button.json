@@ -1,0 +1,30 @@
+{
+  "name": "uieditor.Button",
+  "extends": "uieditor.Group",
+  "init": {
+    "absoluteState": {
+      "content":"true"
+    }
+  },
+  "members": {
+    "enabled": {
+      "type": "uieditor.AttributeString",
+      "init": {
+        "content": "true",
+        "list": [
+          {
+            "label": "true",
+            "type": "true"
+          },
+          {
+            "label": "false",
+            "type": "false"
+          }
+        ]
+      }
+    },
+    "click": {
+      "type": "uieditor.AttributeString"
+    }
+  }
+}
