@@ -6,6 +6,7 @@ function init() {
 
 function loadPlugins() {
     this.path = "flower.json";
+    this.directionPath = "res/direction.json";
     var loader = new flower.URLLoader(editor.path + "plugins/Plugin.json");
     loader.addListener(flower.Event.COMPLETE, this.__onLoadPlugins, this);
     loader.load();
@@ -13,7 +14,7 @@ function loadPlugins() {
 
 function __onLoadPlugins(e) {
     var list = e.data;
-    if(flower.params.plugin) {
+    if (flower.params.plugin) {
         list = [flower.params.plugin];
     }
     this.progress = flower.DataManager.getInstance().createData("ProgressData");
@@ -59,30 +60,45 @@ function loadPorject(url) {
 
 function __onLoadConfig(e) {
     var cfg = this.config = e.data;
-    this.plugins = {};
-    this.title = cfg.name;
-    var direction = this.tree.data.direction;
-    direction.removeAll();
-    for (var key in cfg.direction) {
-        var item = cfg.direction[key];
-        var path = "res/" + key;
-        var file = this.addDirection(path, item.plugin, item.name);
-        if (item.plugin) {
-            this.plugins[item.plugin] = item;
+
+    function func(e) {
+        var dcfg = this.directionConfig = e.data;
+        for (var key in cfg.direction) {
+            if (dcfg[key]) {
+                cfg.direction[key].list = cfg.direction[key].list.concat(dcfg[key]);
+            }
         }
-        direction.push(file);
-        var fileList = item.list;
-        var pluginName = item.plugin;
-        for (var i = 0; i < fileList.length; i++) {
-            direction.push(this.createFile(fileList[i], pluginName));
+        this.pluginsPath = {};
+        this.plugins = {};
+        this.title = cfg.name;
+        var direction = this.tree.data.direction;
+        direction.removeAll();
+        for (var key in cfg.direction) {
+            var item = cfg.direction[key];
+            var path = "res/" + key;
+            var file = this.addDirection(path, item.plugin, item.name);
+            if (item.plugin) {
+                this.plugins[item.plugin] = item;
+                this.pluginsPath[item.plugin] = key;
+            }
+            direction.push(file);
+            var fileList = item.list;
+            var pluginName = item.plugin;
+            for (var i = 0; i < fileList.length; i++) {
+                direction.push(this.createFile(fileList[i], pluginName));
+            }
+        }
+        if (flower.params.openDirection) {
+            this.expand(decodeURIComponent(flower.params.openDirection));
+        }
+        if (flower.params.openFile) {
+            this.openItem(decodeURIComponent(flower.params.openFile));
         }
     }
-    if (flower.params.openDirection) {
-        this.expand(decodeURIComponent(flower.params.openDirection));
-    }
-    if (flower.params.openFile) {
-        this.openItem(decodeURIComponent(flower.params.openFile));
-    }
+
+    var loader = new flower.URLLoader(this.directionPath);
+    loader.addListener(flower.Event.COMPLETE, func, this);
+    loader.load();
 }
 
 function createFile(path, pluginName) {
@@ -116,7 +132,7 @@ function createFile(path, pluginName) {
 }
 
 function saveDirection() {
-    (new flower.RemoteFile(this.path)).saveText(JSON.stringify(this.config));
+    (new flower.RemoteFile(this.directionPath)).saveText(JSON.stringify(this.directionConfig));
 }
 
 function openItem(url) {
@@ -192,18 +208,18 @@ function addDirection(path, pluginName, name) {
 
 function addFile(path, pluginName) {
     var direction = this.tree.data.direction;
-    if(direction.getItemWith("path",path)) {
+    if (direction.getItemWith("path", path)) {
         return;
     }
     direction.push(this.createFile(path, pluginName));
-    this.plugins[pluginName].list.push(path);
+    this.directionConfig[this.pluginsPath[pluginName]].push(path);
     this.saveDirection();
 }
 
 function deleteFile(path, pluginName) {
     var direction = this.tree.data.direction;
     direction.removeItemWith("path", path);
-    var list = this.plugins[pluginName].list;
+    var list = this.directionConfig[this.pluginsPath[pluginName]];
     for (var i = 0; i < list.length; i++) {
         if (path == list[i]) {
             list.splice(i, 1);

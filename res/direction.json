@@ -1,0 +1,33 @@
+{
+  "module": [
+    "res/module/MainUI.xml"
+  ],
+  "data": [
+    "res/data/Paik.json"
+  ],
+  "language": [
+    "res/language/zh_CN.json"
+  ],
+  "tools/dungeon": [
+    "res/tools/dungeon/Level1.json",
+    "res/tools/dungeon/Dungeon1_1.json",
+    "res/tools/dungeon/dungeon_trigger_1_4.json",
+    "res/tools/dungeon/dungeon_trigger_1_5.json",
+    "res/tools/dungeon/dungeon_trigger_1_6.json",
+    "res/tools/dungeon/dungeon_trigger_2_1.json",
+    "res/tools/dungeon/dungeon_trigger_2_2.json",
+    "res/tools/dungeon/dungeon_trigger_2_3.json",
+    "res/tools/dungeon/dungeon_trigger_2_4.json",
+    "res/tools/dungeon/dungeon_trigger_2_5.json",
+    "res/tools/dungeon/dungeon_trigger_2_6.json",
+    "res/tools/dungeon/陷阱.json",
+    "res/tools/dungeon/传送点.json",
+    "res/tools/dungeon/李孟杰测试.json",
+    "res/tools/dungeon/解锁dian.json",
+    "res/tools/dungeon/传送门.json",
+    "res/tools/dungeon/dungeon_trigger_1_1.json",
+    "res/tools/dungeon/dungeon_trigger_1_2.json",
+    "res/tools/dungeon/dungeon_trigger_1_3.json",
+    "res/tools/dungeon/test.json"
+  ]
+}

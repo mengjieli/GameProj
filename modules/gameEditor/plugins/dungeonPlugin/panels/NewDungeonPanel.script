@@ -1,7 +1,7 @@
 function init() {
     var change = function (e) {
         this.path = flower.Path.joinPath(this.data.path, this.nameInput.text + ".json");
-        trace("???", this.data.path, this.path)
+        //trace("???", this.data.path, this.path)
         this.pathLabel.text = "路径: " + this.path;
     };
     change.apply(this);

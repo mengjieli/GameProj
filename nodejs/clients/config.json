@@ -1,0 +1,13 @@
+{
+  "server": {
+    "ip": "localhost",
+    "port": 9900
+  },
+  "httpServer": {
+    "port": 20001
+  },
+  "local": {
+    "user": "limengjie",
+    "root": "./../"
+  }
+}
